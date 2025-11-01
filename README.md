@@ -17,33 +17,9 @@ A production-ready serverless security solution that automatically scans AWS IAM
 
 ## 📊 System Architecture
 
-```mermaid
-graph LR
-    A[CloudWatch Events] --> B[Lambda Function];
-    B --> C[Amazon SNS];
-    C --> D[Email Alerts];
-    B --> E[AWS IAM API];
-    
-    style A fill:#FF9900,color:#000
-    style B fill:#FF9900,color:#000
-    style C fill:#FF9900,color:#000
-    style E fill:#FF9900,color:#000
-```
+<img width="521" height="271" alt="Untitled Diagram drawio (13)" src="https://github.com/user-attachments/assets/e0beb578-7d0c-4519-95e0-2c7184e5c45f" />
 
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│  CloudWatch     │    │     Lambda       │    │      SNS        │
-│    Events       │───▶│   Function       │───▶│   (Email)       │
-│  (Scheduler)    │    │                  │    │                 │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-         │                       │
-         │                       │
-         │                       ▼
-         │               ┌─────────────────┐
-         └───────────────│      IAM        │
-                         │     API         │
-                         └─────────────────┘
-```
+
 
 ## 🚀 Quick Start
 
@@ -232,3 +208,4 @@ This project implements several AWS security best practices:
 - **Encryption**: All data in transit encrypted via HTTPS
 - **Audit Trail**: Comprehensive CloudWatch logging
 - **Regular Scanning**: Continuous compliance monitoring
+
